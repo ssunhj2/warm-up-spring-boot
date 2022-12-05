@@ -10,16 +10,22 @@ public class MemoryMemberRepository implements MemberRepository{
 
     @Override
     public Member save(Member member) {
-        member.setId(++sequence);
-        store.put(member.getId(), member);
+        member.setSeqId(++sequence);
+        store.put(member.getSeqId(), member);
         return member;
     }
 
     @Override
-    public Optional<Member> findById(Long id) {
-        return Optional.ofNullable(store.get(id));
+    public Optional<Member> findBySeqId(Long seqId) {
+        return Optional.ofNullable(store.get(seqId));
     }
 
+    @Override
+    public Optional<Member> findById(String id) {
+        return store.values().stream()
+                .filter(member -> member.getId().equals(id))
+                .findAny();
+    }
     @Override
     public Optional<Member> findByName(String name) {
         return store.values().stream()
