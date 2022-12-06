@@ -9,7 +9,6 @@ import java.util.*;
  * 아직 DB를 선정하지 않았기때문에 만들어놓은 repository
  * 추후 다른 repository로 변경할 예정
  */
-@Repository
 public class MemoryMemberRepository implements MemberRepository{
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L; // id
