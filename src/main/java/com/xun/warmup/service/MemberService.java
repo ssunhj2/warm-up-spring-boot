@@ -3,10 +3,12 @@ package com.xun.warmup.service;
 import com.xun.warmup.domain.Member;
 import com.xun.warmup.repository.MemberRepository;
 import com.xun.warmup.repository.MemoryMemberRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
