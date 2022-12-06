@@ -3,6 +3,7 @@ package com.xun.warmup.service;
 import com.xun.warmup.domain.Member;
 import com.xun.warmup.repository.MemberRepository;
 import com.xun.warmup.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.Optional;
 public class MemberService {
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }
