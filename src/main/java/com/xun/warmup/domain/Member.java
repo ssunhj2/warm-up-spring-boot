@@ -1,7 +1,11 @@
 package com.xun.warmup.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Member {
     // 회원id (시스템상에서 사용)
+    @Id @Column(name="SEQ_NO") @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seqId;
     // 사용자가 설정한 Id
     private String id;
